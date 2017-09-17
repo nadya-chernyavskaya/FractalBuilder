@@ -463,7 +463,6 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	right.setOpaque(false);
 	JPanel left = new JPanel(new GridLayout(2,1));
 	left.setOpaque(false);
-	
 	list_model = new DefaultListModel<String>();
 	list_model.add(0,"z*(sin(z))^2 + c");
 	list_model.add(0,"z*tg(z) + c");
@@ -547,7 +546,7 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	JSplitPane splitVertic = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
 	splitVertic.setOpaque(false);
 	splitVertic.setDividerSize(6);
-	splitVertic.setResizeWeight(0.99);
+	splitVertic.setResizeWeight(0.9);
 	splitVertic.setEnabled(false);
 	splitVertic.isContinuousLayout();
 	splitVertic.setTopComponent(picture);
@@ -559,8 +558,8 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	//splitHorizont.setOneTouchExpandable(true);
 	splitHorizont.setDividerSize(8);
 	splitHorizont.isContinuousLayout();
-	splitHorizont.setDividerLocation(0.2);
-	splitHorizont.setResizeWeight(0.2);
+	splitHorizont.setDividerLocation(0.35);
+	splitHorizont.setResizeWeight(0.35);
 	splitHorizont.setLeftComponent(left);
 	splitHorizont.setRightComponent(right);
 	right.add(splitVertic);
