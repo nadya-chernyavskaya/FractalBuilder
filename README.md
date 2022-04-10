@@ -4,15 +4,16 @@ An easy to use application to build and study fractals. The application builds a
 
 ### Introduction
 
-- Find out more about fractals, Mandelbrot and Julia sets here [here](https://en.wikipedia.org/wiki/Mandelbrot_set).
+- Find out more about fractals, Mandelbrot and Julia sets [here](https://en.wikipedia.org/wiki/Mandelbrot_set).
 - This application has a very basic interface as it was built as a simple university project in 2014. The interfance of the application is currently provided only in Russian, but will be updated to English. 
 
 ### Application
-![alt text](https://github.com/chernyavskaya/FractalBuilder/blob/master/screenshots/example_main_frame.png?raw=true)
+<img src="https://github.com/chernyavskaya/FractalBuilder/blob/master/screenshots/example_main_frame.png" width="600">
 
 Example of a Julia set generator from a fractal 
 
-![alt text](https://github.com/chernyavskaya/FractalBuilder/blob/master/screenshots/example_julia.png?raw=true)
+<img src="https://github.com/chernyavskaya/FractalBuilder/blob/master/screenshots/example_julia.png" width="600">
+
 
 ### Installation Instuctions
 
