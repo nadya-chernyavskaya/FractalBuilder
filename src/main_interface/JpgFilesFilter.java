@@ -9,6 +9,6 @@ public class JpgFilesFilter extends FileFilter {
 		return ( file.getName().endsWith("jpg")) ;
 	}
 	public String getDescription() {
-	return "Изображения (*.jpg)";
+	return "Images (*.jpg)";
 	}
 }

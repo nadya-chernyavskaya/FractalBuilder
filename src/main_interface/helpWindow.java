@@ -29,7 +29,7 @@ public void MakeAll(JEditorPane e1, JEditorPane e2) {
 	panel.setLayout(new BorderLayout());
 	JPanel icon = new JPanel();
 	icon.setLayout(new BorderLayout());
-	JLabel us = new JLabel(new ImageIcon("icons/help_mini.png"));
+	JLabel us = new JLabel(new ImageIcon(new ImageIcon("icons/info.png").getImage().getScaledInstance(50, 50,  java.awt.Image.SCALE_DEFAULT)));
 	us.setOpaque(false);
 	icon.setPreferredSize(new Dimension(400,50));
 	icon.add(us,BorderLayout.WEST);
@@ -39,21 +39,23 @@ public void MakeAll(JEditorPane e1, JEditorPane e2) {
 	JTabbedPane tabPanel = new JTabbedPane(JTabbedPane.TOP, JTabbedPane.SCROLL_TAB_LAYOUT);
 	JPanel tab1 = new JPanel(new BorderLayout(0,0));
 	try{
-		File homePage0 = new File("html_descriptions/programm.html");
+		File homePage0 = new File("html_descriptions/programm_eng.html");
 		String path0 = homePage0.getAbsolutePath();
 		e1 = new JEditorPane("file://"+path0);
 	} catch (Exception ex) {
 		}
 	e1.setContentType("text/html");
 	e1.setEditable(false);
-	tab1.add(e1);
+	JScrollPane scroll_e1 = new JScrollPane(e1);
+ 	tab1.add(scroll_e1);
+	//tab1.add(e1);
 
 	tab1.setPreferredSize(new Dimension(400,650));
-	tabPanel.addTab("О программе",tab1);
+	tabPanel.addTab("About the application",tab1);
 	
 	JPanel tab2 = new JPanel(new BorderLayout(0,0));
 	try{
-	File homePage = new File("html_descriptions/instuction.html");
+	File homePage = new File("html_descriptions/instuction_eng.html");
 	String path = homePage.getAbsolutePath();
 	e2 = new JEditorPane("file://"+path);
 	} catch (Exception ex) {
@@ -63,7 +65,7 @@ public void MakeAll(JEditorPane e1, JEditorPane e2) {
 	JScrollPane scroll = new JScrollPane(e2);
  	tab2.add(scroll);
 
-	tabPanel.addTab("Инструкция",tab2);
+	tabPanel.addTab("Instruction",tab2);
 	other.add(tabPanel,BorderLayout.CENTER);
 	frame.add(icon, BorderLayout.NORTH);
     frame.add(other,BorderLayout.CENTER);

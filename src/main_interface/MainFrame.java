@@ -75,17 +75,17 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	//	setContentPane(new JLabel(new ImageIcon("3.jpg")));
 		getScreenSize();
 		setSize((ScreenWidth*25/40),(ScreenHeight*35/40));
-		setTitle("Mandelbrot ABC");
+		setTitle("Mandelbrot Set");
 		setLocationRelativeTo(null);		
 		
 		JMenuBar menuBar = new JMenuBar();
-		JMenu file = new JMenu("Файл");
-		JMenuItem open = new JMenuItem("Открыть избранные");
+		JMenu file = new JMenu("File");
+		JMenuItem open = new JMenuItem("Open Favorites");
 		//make hot key
 		open.setAccelerator(KeyStroke.getKeyStroke("ctrl O"));
-		JMenuItem saveObj = new JMenuItem("Cохранить избранные");
+		JMenuItem saveObj = new JMenuItem("Save Favorites");
 		saveObj.setAccelerator(KeyStroke.getKeyStroke("ctrl S"));
-		savePic = new JMenuItem("Cохранить изображение");	
+		savePic = new JMenuItem("Save Image");	
 		
 		savePic.setAccelerator(KeyStroke.getKeyStroke("ctrl P"));
 		file.add(open);
@@ -95,7 +95,7 @@ public class MainFrame extends JFrame implements AbleToDraw {
 		//the rigth order is important!
 		menuBar.add(file);
 		
-		JButton help = new JButton("Справка");
+		JButton help = new JButton("Help");
 		help.setContentAreaFilled(false);
 		help.setOpaque(false);
 		help.setBorderPainted(false);
@@ -108,7 +108,7 @@ public class MainFrame extends JFrame implements AbleToDraw {
 				u.MakeAll(u.editor0, u.editor);
 				}
 			});
-		param = new JButton("Параметры");
+		param = new JButton("Parameters");
 		param.setOpaque(false);
 		param.setContentAreaFilled(false);
 		param.setBorderPainted(false);
@@ -133,23 +133,22 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	t2 = new JTextField(10);
 	t2.setToolTipText("Im(c)");
 	t3 = new JTextField(3);	
-	t3.setToolTipText("n - количество итераций до бесконечности");
+	t3.setToolTipText("n - number of iterations until infinity");
 	
 	JPanel grid = new JPanel(new GridLayout(1,1,0,0));
 	grid.setOpaque(false);
 
 	JPanel text_button = new JPanel(new FlowLayout(FlowLayout.LEFT));
 	text_button.setOpaque(false);
-	smallField.setToolTipText("Введите функцию");
+	smallField.setToolTipText("Enter a function");
 	text_button.add(new JLabel("f(z) = "));
 	text_button.add( smallField);
-	JButton draw = new JButton("ОК");
-	draw.setToolTipText("Нарисовать множество Мандельброта");
-
+	JButton draw = new JButton("Run");
+	draw.setToolTipText("Draw Mandelbrot set");
 	text_button.add(draw);
 	ImageIcon favImage  = new ImageIcon("icons/bookmarks2.png"); 
 	JButton fav = new JButton(favImage);
-	fav.setToolTipText("Добавить в избранное");
+	fav.setToolTipText("Add to favorites");
 	fav.setPreferredSize(new Dimension(22,22));
 	fav.setOpaque(false);
 	fav.setFocusPainted(false);
@@ -165,18 +164,17 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	
 	grid.add(text_button);
 
-//	JPanel har_button = new JPanel(new FlowLayout(FlowLayout.LEFT));
-//	har_button.setOpaque(false);
+
 	JPanel har = new JPanel(new FlowLayout(FlowLayout.CENTER ));
-	har.setToolTipText("Характеристики выбранной точки");
+	har.setToolTipText("Properties of the chosen point");
 	har.setOpaque(false);
 	har.add(t1);
 	har.add(t2);
 	har.add(t3);
 	text_button.add(har);
 
-	JButton Julia = new JButton("Жюлиа"); /////Julia
-	Julia.setToolTipText("Нарисовать для точки мн-во Жюлиа");
+	JButton Julia = new JButton("Draw Julia set"); /////Julia
+	Julia.setToolTipText("Draw Julia set for the chosen point. To select a point from the fractal, double-click on it.");
 	Julia.addActionListener(new ActionListener() {
 
 		public void actionPerformed(ActionEvent e) {
@@ -245,7 +243,7 @@ public class MainFrame extends JFrame implements AbleToDraw {
 			PolishNotation input = new PolishNotation(smallField.getText());
 			if (input.analyse() < 0){ 
 				JOptionPane.showMessageDialog(MainFrame.this,
-						"Проверьте коректность функционального выражения", "Ошибка",
+						"Check if the function expression is correct", "Error",
 						JOptionPane.WARNING_MESSAGE);
 			} else {
 				
@@ -264,7 +262,7 @@ public class MainFrame extends JFrame implements AbleToDraw {
 			
 		} else
 			JOptionPane.showMessageDialog(MainFrame.this,
-					"Задайте функцию!", "Ошибка",
+					"Missing function", "Error",
 					JOptionPane.WARNING_MESSAGE);
 	}});
 	fc1 = new JFileChooser();
@@ -276,7 +274,7 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	fcp.addChoosableFileFilter(png);
 	savePic.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-			fcp.setDialogTitle("Сохранение файла");
+			fcp.setDialogTitle("Save File");
 			fcp.setFileSelectionMode(JFileChooser.FILES_ONLY);
 			int res = fcp.showSaveDialog(getContentPane());
 			if ( res == JFileChooser.APPROVE_OPTION ){
@@ -303,7 +301,7 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	fc1.addChoosableFileFilter(txt);
 	saveObj.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-			fc1.setDialogTitle("Сохранение избранных");
+			fc1.setDialogTitle("Save Favorites");
 			fc1.setFileSelectionMode(JFileChooser.FILES_ONLY);
 			int res = fc1.showSaveDialog(getContentPane());
 			if ( res == JFileChooser.APPROVE_OPTION ){
@@ -334,7 +332,7 @@ public class MainFrame extends JFrame implements AbleToDraw {
 		}});
 		open.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				fc1.setDialogTitle("Открыть");
+				fc1.setDialogTitle("Open");
 				fc1.setFileSelectionMode(JFileChooser.FILES_ONLY);
 				int res = fc1.showOpenDialog(getContentPane());
 				if (res == JFileChooser.APPROVE_OPTION) {
@@ -364,7 +362,7 @@ public class MainFrame extends JFrame implements AbleToDraw {
 				PolishNotation input = new PolishNotation(smallField.getText());
 				if (input.analyse() < 0){ 
 					JOptionPane.showMessageDialog(MainFrame.this,
-							"Проверьте коректность функционального выражения", "Ошибка",
+							"Check if the function expression is correct", "Error",
 							JOptionPane.WARNING_MESSAGE);
 				} else {
 					synchrMenu.setDimension(graph.getHeight());					
@@ -390,7 +388,7 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	
 	String[] iconFiles = { "zoom-in.png", "zoom-out.png","arrow-left1.png","arrow-right1.png","arrow-up1.png","arrow-down1.png", "fill-color1.png" };
 	String[] newiconFiles = { "zoom-in2.png", "zoom-out2.png","arrow-left.png","arrow-right.png","arrow-up.png","arrow-down.png", "fill-color.png" };
-	String[] buttonLabels = { "Приблизить", "Отдалить", "Влево","Вправо","Вверх","Вниз","Цвет"};
+	String[] buttonLabels = { "Zoom-in", "Zoom-out", "Left","Right","Up","Down","Color"};
 	String icons_dir = "icons/";
 	ImageIcon[] icons = new ImageIcon[iconFiles.length];
 	buttons = new JButton[buttonLabels.length];
@@ -472,7 +470,7 @@ public class MainFrame extends JFrame implements AbleToDraw {
 		
 	list1 = new JList<String>(list_model);
 	JScrollPane scroll_list1 = new JScrollPane(list1);
-	list1.setBorder(new CompoundBorder(new TitledBorder("Примеры"), new EmptyBorder(1, 1, 1, 1)));
+	list1.setBorder(new CompoundBorder(new TitledBorder("Examples"), new EmptyBorder(1, 1, 1, 1)));
 	scroll_list1.setOpaque(false);
 	scroll_list1.getViewport().setOpaque(false);
 	left.add(scroll_list1);
@@ -481,8 +479,8 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	list2 = new JList<String>(list_model_favorite);
 	
 	pm = new JPopupMenu();
-	delete = new JMenuItem("Удалить");
-	removeAll = new JMenuItem("Очистить список");
+	delete = new JMenuItem("Delete");
+	removeAll = new JMenuItem("Clear the list");
 	pm.add(delete);
 	pm.add(removeAll);
 	list2.addMouseListener(new MouseAdapter() {
@@ -530,7 +528,7 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	});
 	
 	JScrollPane scroll_list2 = new JScrollPane(list2);
-	list2.setBorder(new CompoundBorder(new TitledBorder("Избранные"), new EmptyBorder(1, 1, 1, 1)));
+	list2.setBorder(new CompoundBorder(new TitledBorder("Favorites"), new EmptyBorder(1, 1, 1, 1)));
 	scroll_list2.setOpaque(false);
 	scroll_list2.getViewport().setOpaque(false);
 	left.add(scroll_list2);
@@ -559,7 +557,6 @@ public class MainFrame extends JFrame implements AbleToDraw {
 
 	getContentPane().setLayout(new BorderLayout());
 	getContentPane().add(splitHorizont, BorderLayout.CENTER);
-///////////////////////////
 
 	setVisible(true);
 	}
@@ -644,7 +641,6 @@ public class MainFrame extends JFrame implements AbleToDraw {
 		}
 	}
 	
-//=======================================================================================================================
 	public class swComponent extends JComponent {
 			public void paintComponent(Graphics g) {
 				FractalObserver fObs = new FractalObserver();
@@ -653,12 +649,11 @@ public class MainFrame extends JFrame implements AbleToDraw {
 			}
 		}
 	
-	///////////////////////
 	
 	 public static void main(String[] args) {
 		 Locale[] l = Locale.getAvailableLocales();
 		 for (int i = 0; i < l.length; i++) {
-			if(l[i].toString().equals("ru")){
+			if(l[i].toString().equals("eng")){
 				Locale.setDefault(l[i]);
 				break;
 			}

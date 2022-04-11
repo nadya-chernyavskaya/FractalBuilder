@@ -10,6 +10,6 @@ public class TextFilesFilter extends FileFilter {
 		}
 		public String getDescription() {
 		
-			return "Фрактал (*.frac)";
+			return "Fractal (*.frac)";
 		}
 	}

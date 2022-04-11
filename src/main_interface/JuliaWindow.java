@@ -47,17 +47,17 @@ public JPanel graphJul;
 private swComponent c;
 
 public void MakeJuliaFrame(double a, double b,String s) {
-	final JFrame frame= new JFrame();	frame.setName("Julia");
+	final JFrame frame= new JFrame();	frame.setName("Julia Set");
 	JPanel panel = new JPanel();
 	panel.setLayout(new BorderLayout());
 	JMenuBar menuBar = new JMenuBar();
-	savePic = new JButton("Cохранить");
+	savePic = new JButton("Save");
 	savePic.setFocusable(false);
 	savePic.setOpaque(false);
 	savePic.setContentAreaFilled(false);
 	savePic.setBorderPainted(false);
 	
-	JButton param = new JButton("Параметры");
+	JButton param = new JButton("Parameters");
 	param.setFocusable(false);
 	param.setOpaque(false);
 	param.setContentAreaFilled(false);
@@ -77,7 +77,7 @@ public void MakeJuliaFrame(double a, double b,String s) {
 	fcp.addChoosableFileFilter(png);
 	savePic.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-			fcp.setDialogTitle("Сохранение файла");
+			fcp.setDialogTitle("Save file");
 			fcp.setFileSelectionMode(JFileChooser.FILES_ONLY);
 			int res = fcp.showSaveDialog(frame);
 			if ( res == JFileChooser.APPROVE_OPTION ){
@@ -126,7 +126,7 @@ public void MakeJuliaFrame(double a, double b,String s) {
 	toolbar.setFloatable(false);
 	String[] iconFiles = { "zoom-in.png", "zoom-out.png","arrow-left1.png","arrow-right1.png","arrow-up1.png","arrow-down1.png", "fill-color1.png" };
 	String[] newiconFiles = { "zoom-in2.png", "zoom-out2.png","arrow-left.png","arrow-right.png","arrow-up.png","arrow-down.png", "fill-color.png" };
-	String[] buttonLabels = { "����������", "��������", "�����","������","�����","����","����"};
+	String[] buttonLabels = { "Zoom-in", "Zoom-out", "Left","Right","Up","Down","Color"};
 	String icons_dir = "icons/";
 	ImageIcon[] icons = new ImageIcon[iconFiles.length];
 	JButton[] buttons = new JButton[buttonLabels.length];

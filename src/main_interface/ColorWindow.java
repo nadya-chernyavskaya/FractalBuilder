@@ -24,8 +24,8 @@ public void MakeWindow(final SynchrMenu frac, int res,final int a) {
 	frame.setName("Color");
 	frame.pack();
 	JPanel panel = new JPanel();
-	JLabel shrift = new JLabel("Выберите цветовую гамму");
-	panel.add(new JLabel("         "));
+	JLabel shrift = new JLabel("Choose the color scheme");
+	//panel.add(new JLabel("         "));
 	panel.add(shrift);
 	JLabel bar = new JLabel(new ImageIcon("icons/ColorBar.png"));
 	panel.add(bar);
@@ -35,9 +35,9 @@ public void MakeWindow(final SynchrMenu frac, int res,final int a) {
 	slider.setValue(res);
 	slider.setValue(res);
 	Dimension d = slider.getPreferredSize();  
-	slider.setPreferredSize(new Dimension(d.width+117,d.height));
+	slider.setPreferredSize(new Dimension(d.width+140,d.height));
 	panel.add(slider);
-	JButton okey = new JButton("Применить"); 
+	JButton okey = new JButton("Apply"); 
 	okey.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			if (a == 0 ) {
@@ -53,7 +53,7 @@ public void MakeWindow(final SynchrMenu frac, int res,final int a) {
 	});
 	panel.add(okey);
 	frame.add(panel);
-	frame.setSize(400,145);
+	frame.setSize(400,180);
 	frame.setLocationRelativeTo(null);
 	frame.setVisible(true);
 	

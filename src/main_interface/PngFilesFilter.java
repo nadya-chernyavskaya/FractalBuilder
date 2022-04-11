@@ -9,6 +9,6 @@ public class PngFilesFilter extends FileFilter {
 		return ( file.getName().endsWith("png")) ;
 	}
 	public String getDescription() {
-	return "Изображения (*.png)";
+	return "Images (*.png)";
 	}
 }

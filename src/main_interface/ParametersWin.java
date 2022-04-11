@@ -27,10 +27,11 @@ public void MakeParamWin(final SynchrMenu sm){
 		frame.setAlwaysOnTop(true);
 		JPanel panel = new JPanel(); 
 		JPanel pane0 = new JPanel();
-		pane0.add(new JLabel("Задайте параметры:"));
+		pane0.add(new JLabel("Set Parameters :            "));
 		panel.add(pane0);
 		
-		final String label[] = {" Координата X  ","  Координата Y  ","       Размер        ","   Разрешение   ","Число итераций", " Бесконечность "};
+		
+		final String label[] = {" Coordinate X  ","  Coordinate Y  ","       Size        ","   Resolution   ","Number of iterations", " Infinity "};
 		JLabel[] label0 = new JLabel[label.length];
 		pane = new JPanel[label.length];
 		text = new JTextField[label.length];
@@ -50,11 +51,11 @@ public void MakeParamWin(final SynchrMenu sm){
 		text[3].setText(""+sm.nX());
 		text[4].setText(""+sm.nIter());
 		text[5].setText(""+sm.ceiling());
-		JButton confirm = new JButton("Применить");
+		JButton confirm = new JButton("Apply");
 		confirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
 				if (sm.setProperties(text[0].getText(),text[1].getText(),text[2].getText(),text[3].getText(),text[4].getText(),text[5].getText()) < 0 ){
-					JOptionPane.showMessageDialog(frame,"Некорректно заполнены поля!", "Ошибка",JOptionPane.WARNING_MESSAGE);		
+					JOptionPane.showMessageDialog(frame,"Fields filled out incorrectly!", "Error",JOptionPane.WARNING_MESSAGE);		
 					return;
 				}
 				sm.makeNewFractal();
@@ -63,7 +64,7 @@ public void MakeParamWin(final SynchrMenu sm){
 		});
 		
 	
-		JButton asItWas = new JButton("По умолчанию");
+		JButton asItWas = new JButton("Restore Default Settings");
 		asItWas.addActionListener(new ActionListener(){
 			public void actionPerformed( ActionEvent e){
 				sm.setDefaultProperties();
