@@ -5,14 +5,16 @@ An easy to use application to build and study fractals. The application builds a
 ### Introduction
 
 - Find out more about fractals, Mandelbrot and Julia sets [here](https://en.wikipedia.org/wiki/Mandelbrot_set).
-- This application has a very basic interface as it was built as a simple university project in 2014. The interfance of the application is currently provided only in Russian, but will be updated to English. 
+- This application has a very basic interface as it was built as a simple university project in 2014. The interfance of the application is available in English. For the interface in Russian see branch 'rus'. 
 
 ### Application
-<img src="https://github.com/chernyavskaya/FractalBuilder/blob/master/screenshots/example_main_frame.png" width="600">
+Main window of the application 
+
+<img src="https://github.com/chernyavskaya/FractalBuilder/blob/eng/screenshots/example_main_frame_eng.png" width="600">
 
 Example of a Julia set generator from a fractal 
 
-<img src="https://github.com/chernyavskaya/FractalBuilder/blob/master/screenshots/example_julia.png" width="600">
+<img src="https://github.com/chernyavskaya/FractalBuilder/blob/eng/screenshots/example_julia_eng.png" width="600">
 
 
 ### Installation Instuctions
@@ -23,6 +25,13 @@ Example of a Julia set generator from a fractal
     - Go the root directory of the project 
     - Run ```javac src/*/*java -d classes```
  - Once the code is compiled you can launch the application. If you use an IDE, you can launch it directly from there. Otherwise, run the following command ```java -cp classes main_interface.MainFrame```
+
+### How to use the application
+
+See 'Help' to read the instructions on how to use the application.
+
+<img src="https://github.com/chernyavskaya/FractalBuilder/blob/eng/screenshots/example_help_frame_eng.png" width="300">
+
 
 ##### LICENSE
 
