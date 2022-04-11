@@ -1,6 +1,6 @@
 ## Build a fractal of your dreams
 
-An easy to use application to build and study fractals. The application builds a Mandelbrot set from any user-defined complex function. Once the fractal (Mandelbrot set) is build, you can infinitely zoom-in to explore its structure. You can also choose a point on the fractal to build a Julia set from. Users can choose among different color-schemes and save all created images. 
+An easy to use application to build and study fractals. The application builds a Mandelbrot set from any user-defined complex function. Once the fractal (Mandelbrot set) is built, you can infinitely zoom-in to explore its structure. You can also choose a point on the fractal to build a Julia set from. Users can choose among different color-schemes and save all created images. 
 
 ### Introduction
 
@@ -12,7 +12,7 @@ Main window of the application
 
 <img src="https://github.com/chernyavskaya/FractalBuilder/blob/eng/screenshots/example_main_frame_eng.png" width="600">
 
-Example of a Julia set generator from a fractal 
+Example of a Julia set generated from a fractal 
 
 <img src="https://github.com/chernyavskaya/FractalBuilder/blob/eng/screenshots/example_julia_eng.png" width="600">
 
