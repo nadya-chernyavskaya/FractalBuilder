@@ -5,7 +5,7 @@ An easy to use application to build and study fractals. The application builds a
 ### Introduction
 
 - Find out more about fractals, Mandelbrot and Julia sets [here](https://en.wikipedia.org/wiki/Mandelbrot_set).
-- This application has a very basic interface as it was built as a simple university project in 2014. The interfance of the application is available in English. For the interface in Russian see branch 'rus'. 
+- This application has a very basic interface as it was built as a simple university project in 2014. The interface of the application is in English. For the interface in Russian see branch 'rus'. 
 
 ### Application
 Main window of the application 
