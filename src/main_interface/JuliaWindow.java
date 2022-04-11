@@ -127,17 +127,18 @@ public void MakeJuliaFrame(double a, double b,String s) {
 	String[] iconFiles = { "zoom-in.png", "zoom-out.png","arrow-left1.png","arrow-right1.png","arrow-up1.png","arrow-down1.png", "fill-color1.png" };
 	String[] newiconFiles = { "zoom-in2.png", "zoom-out2.png","arrow-left.png","arrow-right.png","arrow-up.png","arrow-down.png", "fill-color.png" };
 	String[] buttonLabels = { "����������", "��������", "�����","������","�����","����","����"};
+	String icons_dir = "icons/";
 	ImageIcon[] icons = new ImageIcon[iconFiles.length];
 	JButton[] buttons = new JButton[buttonLabels.length];
 	for (int i = 0; i < iconFiles.length; ++i) {
-        icons[i] = new ImageIcon(iconFiles[i]);
+        icons[i] = new ImageIcon(icons_dir+iconFiles[i]);
         buttons[i] = new JButton(icons[i]);
         buttons[i].setFocusPainted(false);
         buttons[i].setContentAreaFilled(false);
         buttons[i].setToolTipText(buttonLabels[i]);
         buttons[i].setOpaque(false);
         buttons[i].setBorderPainted(false);
-        buttons[i].setRolloverIcon(new ImageIcon(newiconFiles[i]));
+        buttons[i].setRolloverIcon(new ImageIcon(icons_dir+newiconFiles[i]));
         toolbar.add(buttons[i]);
 	}
 	buttons[1].addActionListener(new ActionListener() {

@@ -27,7 +27,7 @@ public void MakeWindow(final SynchrMenu frac, int res,final int a) {
 	JLabel shrift = new JLabel("Выберите цветовую гамму");
 	panel.add(new JLabel("         "));
 	panel.add(shrift);
-	JLabel bar = new JLabel(new ImageIcon("ColorBar.png"));
+	JLabel bar = new JLabel(new ImageIcon("icons/ColorBar.png"));
 	panel.add(bar);
 	slider = new JSlider(0, 30, 0);
 	slider.setMajorTickSpacing(500);

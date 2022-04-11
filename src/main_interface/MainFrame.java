@@ -1,7 +1,5 @@
 package main_interface;
 
-//second commit test
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.*;
@@ -137,10 +135,8 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	t3 = new JTextField(3);	
 	t3.setToolTipText("n - количество итераций до бесконечности");
 	
-	//табличное колво строк, столбцов, расстояния
 	JPanel grid = new JPanel(new GridLayout(1,1,0,0));
 	grid.setOpaque(false);
-	// добавляем компоненты
 
 	JPanel text_button = new JPanel(new FlowLayout(FlowLayout.LEFT));
 	text_button.setOpaque(false);
@@ -151,14 +147,14 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	draw.setToolTipText("Нарисовать множество Мандельброта");
 
 	text_button.add(draw);
-	ImageIcon favImage  = new ImageIcon("bookmarks2.png"); 
+	ImageIcon favImage  = new ImageIcon("icons/bookmarks2.png"); 
 	JButton fav = new JButton(favImage);
 	fav.setToolTipText("Добавить в избранное");
 	fav.setPreferredSize(new Dimension(22,22));
 	fav.setOpaque(false);
 	fav.setFocusPainted(false);
     fav.setContentAreaFilled(false);
-    fav.setRolloverIcon(new ImageIcon("bookmarks.png"));
+    fav.setRolloverIcon(new ImageIcon("icons/bookmarks.png"));
 	fav.setBorderPainted(false);
 	text_button.add(fav);
 	fav.addActionListener(new ActionListener() {
@@ -200,13 +196,9 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	graph = new JPanel();//// here we add picture of Mandelbrot made my Jenya
 	graph.setOpaque(false);
 	picture.add(graph);
-	/*-----------From Jenya--------------------------------------------------------------------------------------*/
-
 	
 	synchrMenu  = new SynchrMenu();
 	fractal = new Fractal(synchrMenu, graph, this);
-
-/*-----------------------------------------------------------------------------------------------------------*/
 	
 	
 	graph.setLayout(new BorderLayout());
@@ -399,10 +391,11 @@ public class MainFrame extends JFrame implements AbleToDraw {
 	String[] iconFiles = { "zoom-in.png", "zoom-out.png","arrow-left1.png","arrow-right1.png","arrow-up1.png","arrow-down1.png", "fill-color1.png" };
 	String[] newiconFiles = { "zoom-in2.png", "zoom-out2.png","arrow-left.png","arrow-right.png","arrow-up.png","arrow-down.png", "fill-color.png" };
 	String[] buttonLabels = { "Приблизить", "Отдалить", "Влево","Вправо","Вверх","Вниз","Цвет"};
+	String icons_dir = "icons/";
 	ImageIcon[] icons = new ImageIcon[iconFiles.length];
 	buttons = new JButton[buttonLabels.length];
 	for (i = 0; i < iconFiles.length; ++i) {
-        icons[i] = new ImageIcon(iconFiles[i]);
+        icons[i] = new ImageIcon(icons_dir+iconFiles[i]);
         buttons[i] = new JButton(icons[i]);
         buttons[i].setEnabled(false);
         buttons[i].setFocusPainted(false);
@@ -410,7 +403,7 @@ public class MainFrame extends JFrame implements AbleToDraw {
         buttons[i].setToolTipText(buttonLabels[i]);
         buttons[i].setOpaque(false);
         buttons[i].setBorderPainted(false);
-        buttons[i].setRolloverIcon(new ImageIcon(newiconFiles[i]));
+        buttons[i].setRolloverIcon(new ImageIcon(icons_dir+newiconFiles[i]));
         toolbar.add(buttons[i]);
 	}
 	buttons[0].addActionListener(new ActionListener() {
